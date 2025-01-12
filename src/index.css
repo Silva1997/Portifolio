@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer{
+  
+   @font-face {
+      font-family: 'jetbrains-mono';
+      src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+   }
+   /* .jetbrains-mono-<uniquifier> {
+     font-family: "JetBrains Mono", serif;
+     font-optical-sizing: auto;
+     font-weight: <weight>;
+     font-style: normal;
+   } */
+   body{
+    color: '#ffd';
+   }
+}
