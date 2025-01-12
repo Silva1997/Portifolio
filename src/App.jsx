@@ -2,7 +2,7 @@ import imagem from '../src/assets/image.png'
 import icon from '../src/assets/ANGOLA.jpeg'
 import { FiCodesandbox, FiFile, FiFigma, FiSend, FiGithub, FiLinkedin } from 'react-icons/fi'
 import React, { useState } from 'react';
-import { Flex, Progress, Anchor } from 'antd';
+import { Flex, Progress, Anchor,ConfigProvider } from 'antd';
 import Drawer from './componet/Drawer/Drawer';
 export default function App() {
 
@@ -35,7 +35,7 @@ export default function App() {
   }, [name])
   return (
     <>
-      <nav className=" overflow-hidden xl:text-white sticky top-0 z-[1000] items-center text-center h-16 pt-4 pb-4 bg-slate-950 flex flex-row justify-end xl:pl-14 xl:pr-16">
+      <nav className="  shadow-sm shadow-red-500/50 overflow-hidden xl:text-white sticky top-0 z-[1000] items-center text-center h-16 pt-4 pb-4 bg-slate-950 flex flex-row justify-end xl:pl-14 xl:pr-16">
 
         <div className=' xl:text-start xs-min:relative xl:relative xs-min:right-48 xl:right-[35rem]'>
           <img width={40} src={icon} alt='Angola' />
@@ -48,7 +48,7 @@ export default function App() {
 
 
       <main className=" overflow-hidden xl:text-white flex flex-col xs-min:mr-6 xs-min:ml-6 md:mr-16 md:ml-16 xl:xl:mr-48 xl:ml-48 ">
-        <p className='text-red-500 xs-min:text-md md:text-xl md:mt-16 xl:text-xl  leading-8  '>  Olá, meu nome é</p>
+        <p className='text-red-500 xs-min:text-md xs-min:mt-12 md:text-xl md:mt-16 xl:text-xl  leading-8  '>  Olá, meu nome é</p>
 
         <h3 className="xs-min:text-4xl md:text-6xl md:p-0 xl:text-[3.3rem] xl:leading-[7rem]  font-bold xs-min:mb-2   text-gray-300">Eugénio Silva</h3>
 
@@ -58,7 +58,7 @@ export default function App() {
         <p className=" xs-min:text-wrap xs-min:text-base md:text-2xl xl:text-2xl  xs-min:text-justify tracking-normal xl:text-justify text-gray-400" >        Sou um engenheiro de informática de gestão especializado em criar (e ocasionalmente projetar) experiências digitais excepcionais. Tenho expertise em aplicações frontend and backend, web e Java, com ampla experiência profissional.
         </p>
 
-        <a className=" xs-min:hidden  xs-min:text-white  xl:fixed xl:top-[20rem] xl:-right-8 hover:xl:text-red-500 active:scale-50 xl:text-sm  xl:rotate-90 cursor-pointer"><span className='flex items-center gap-2 text-sm'><FiSend />Lucaseugeniofernando@gmail.com</span></a>
+        <a className="   xs-min:text-white xl:text-white  xl:fixed xl:top-[24rem] xl:-right-8 hover:xl:text-red-500 active:scale-50 xl:text-sm  xl:rotate-90 cursor-pointer"><span className='flex items-center gap-2 text-sm'><FiSend />Lucaseugeniofernando@gmail.com</span></a>
         {/* <hr className=" xl:fixed xl:rotate-90 top-[28rem] -right-16 h-24 w-[1px] bg-white mt-12" /> */}
         <a className=" xs-min:mb-20 xs-min:mt-20 xs-min:flex xs-min:items-center xs-min:justify-center xs-min:text-white xs-min:text-center xl:fixed xl:top-[20rem] xl:left-8 xl:text-sm  xl:rotate-90 cursor-pointer"><span className='flex items-center gap-2'><FiGithub className=' hover:scale-110 hover:xl:text-red-500' size={30} /> <FiLinkedin className=' hover:scale-110 hover:xl:text-red-500' size={30} /></span></a>
 
@@ -75,7 +75,7 @@ export default function App() {
         {/* Sobre min */}
         <div id='sobre'>
           <div className="flex flex-row justify-start  items-center">
-            <h1 className="text-gray-300 xs-min:text-2xl xs-min:font-semibold xl:text-2xl  font-fira"><a className="xl:text-2xl xs-min:text-red-500  xl:text-red-500 font-jetbrains font-bold">01. </a>Sobre mim</h1> <hr className="xl:w-56 font-bold mt-3 ml-4" />
+            <h1 className=" font-fontjetbrains font-normal text-gray-300 xs-min:text-2xl xs-min:font-semibold xl:text-2xl  font-fira"><a className="xl:text-2xl xs-min:text-red-500  xl:text-red-500 font-jetbrains font-bold">01. </a>Sobre mim</h1> <hr className="xl:w-56 font-bold mt-3 ml-4" />
           </div>
 
           <div className="grid xs-min:mt-4 xs-min:mb-8 xs-min:grid-cols-1 md:grid-cols-2 md:mt-4 xl:grid-cols-2">
@@ -159,7 +159,7 @@ export default function App() {
         <div id='servico'>
 
           <div className="flex flex-row justify-start   items-center">
-            <h1 className="text-gray-300 xs-min:text-2xl xs-min:font-semibold xl:text-2xl  font-fira"><a className="xl:text-2xl  xl:text-red-500 font-jetbrains font-bold">02. </a>Serviços</h1> <hr className="xl:w-56 font-bold mt-3 ml-4" />
+            <h1 className=" font-fontjetbrains font-normal text-gray-300 xs-min:text-2xl xs-min:font-semibold xl:text-2xl  font-fira"><a className="xl:text-2xl  xl:text-red-500 font-jetbrains font-bold">02. </a>Serviços</h1> <hr className="xl:w-56 font-bold mt-3 ml-4" />
           </div>
 
 
@@ -199,7 +199,7 @@ export default function App() {
         <div id='habilidade'>
 
           <div className="flex flex-row justify-start  items-center">
-            <h1 className="text-gray-300 xs-min:text-2xl xs-min:font-semibold xl:text-2xl  font-fira"><a className="xl:text-2xl  xl:text-red-500 font-jetbrains font-bold">03. </a>Habilidades</h1> <hr className="xl:w-56 font-bold mt-3 ml-4" />
+            <h1 className=" font-fontjetbrains font-normal text-gray-300 xs-min:text-2xl xs-min:font-semibold xl:text-2xl  font-fira"><a className="xl:text-2xl  xl:text-red-500 font-jetbrains font-bold">03. </a>Habilidades</h1> <hr className="xl:w-56 font-bold mt-3 ml-4" />
           </div>
 
           <Barras />
@@ -209,8 +209,8 @@ export default function App() {
         {/* Contacto */}
         <div id='contacto'>
           <div className="flex flex-row justify-start  items-center">
-            <h1 className="text-gray-300 xs-min:text-2xl xs-min:font-semibold xl:text-2xl  font-fira">
-              <a className="xl:text-2xl  xl:text-red-500 font-jetbrains font-bold">
+            <h1 className=" font-fontjetbrains font-normal text-gray-300 xs-min:text-2xl xs-min:font-semibold xl:text-2xl  font-fira">
+              <a className=" xl:text-2xl  xl:text-red-500 font-jetbrains font-bold">
                 04. </a>Contacto</h1> <hr className="xl:w-56 font-bold mt-3 ml-4" />
           </div>
           <p className='text-base mt-3 mb-3 text-white text-start'>Novas oportunidades são sempre bem-vindas!
@@ -246,10 +246,19 @@ function Navegador() {
 
   return (
 
-    <div className=' md:flex md:flex-row md:items-center md:gap-3 xs-min:hidden xl:flex xl:flex-row xl:items-center xl:gap-3'>
-      <Anchor
-        className='mt-1 text-white flex items-center  relative md:right-4  xl:right-[1rem] w-[31.9rem]'
-
+    <div className='   md:flex md:flex-row md:items-center md:gap-3 xs-min:hidden xl:flex xl:flex-row xl:items-center xl:gap-3'>
+     
+     
+     <ConfigProvider
+  theme={{
+    token: {
+      colorPrimary:'#fff'
+    },
+  }}
+>
+<Anchor
+        className='mt-1 text-white flex items-center  relative md:right-4  xl:right-[1rem] w-[40.9rem]'
+        showInkInFixed={false}
         direction='horizontal'
         targetOffset={'65'}
 
@@ -257,35 +266,37 @@ function Navegador() {
           {
             key: 'part-1',
             href: '#sobre',
-            title: <h6 className=" text-white text-base  font-semibold hover:text-red-500 cursor-pointer"> <span className="text-red-500 ">01.</span> Sobre</h6>
+            title: <h6 className=" xl:font-fontjetbrains xl:font-normal text-white text-base  font-semibold hover:text-red-500 cursor-pointer"> <span className="text-red-500 ">01.</span> Sobre</h6>
 
           },
           {
             key: 'part-2',
             href: '#servico',
-            title: <h6 className=" text-white text-base  font-semibold   hover:text-red-500  cursor-pointer">  <span className="text-red-500 ">02.</span> Serviço</h6>
+            title: <h6 className=" xl:font-fontjetbrains xl:font-normal text-white text-base  font-semibold   hover:text-red-500  cursor-pointer">  <span className="text-red-500 ">02.</span> Serviço</h6>
             ,
           },
           {
             key: 'part-3',
             href: '#habilidade',
-            title: <h6 className=" text-white  text-base  font-semibold  hover:text-red-500  cursor-pointer">  <span className="text-red-500 ">03.</span> Habilidade</h6>
+            title: <h6 className=" xl:font-fontjetbrains xl:font-normal text-white  text-base  font-semibold  hover:text-red-500  cursor-pointer">  <span className="text-red-500 ">03.</span> Habilidade</h6>
 
           },
           {
             key: 'part-4',
             href: '#contacto',
-            title: <h6 className=" text-white  text-base  font-semibold  hover:text-red-500  cursor-pointer">  <span className="text-red-500 ">04.</span> Contacto</h6>
+            title: <h6 className=" xl:font-fontjetbrains xl:font-normal text-white  text-base  font-semibold  hover:text-red-500  cursor-pointer">  <span className="text-red-500 ">04.</span> Contacto</h6>
 
           },
           {
             key: 'part-5',
             href: '#',
-            title: <button className="  hover:bg-red-500/40  hover:text-white md:text-red-500 xl:text-red-500 border-[2px] h-10 border-red-600 rounded-sm md:w-24   xl:w-24 ">Curriculo</button>,
+            title: <button className=" xl:font-fontjetbrains xl:font-normal  hover:bg-red-500/40  hover:text-white md:text-red-500 xl:text-red-500 border-[2px] h-10 border-red-600 rounded-sm md:w-24   xl:w-24 ">Curriculo</button>,
 
           },
         ]}
       />
+</ConfigProvider>
+     
       {/*
      <h6 className="  hover:xl:text-red-500 cursor-pointer"> <span className="xl:text-red-500 ">01.</span> Sobre</h6>
       <h6 className="  hover:xl:text-red-500  cursor-pointer">  <span className="xl:text-red-500 ">02.</span> Experiência</h6>
@@ -306,9 +317,9 @@ const Barras = () => (
     className='mt-4 xs-min:text-white xs-min:text-sm mb-4 xs-min:w-44 xl:w-full'>
 
 
-    <div className='flex items-center gap-7'>
+    <div className='flex items-center gap-6'>
       <h5 className='xl:text-red-500'>REACT.JS</h5>
-      <Progress
+      {/* <Progress
         percent={100}
         percentPosition={{
           align: 'start',
@@ -322,13 +333,19 @@ const Barras = () => (
           to: 'pink',
         }}
         status='active'
-      />
+      /> */}
+
+<div class="flex w-56 h-4 overflow-hidden font-sans text-xs font-medium  flex-start bg-white">
+      <div class="flex items-center justify-center w-[80%] h-full overflow-hidden text-white break-all bg-gray-900 ">
+        80% Completo
+      </div>
+    </div>  
     </div>
 
 
     <div className='flex items-center gap-4'>
       <h5 className='xl:text-red-500'>HTML/CSS</h5>
-      <Progress
+      {/* <Progress
         percent={80}
         percentPosition={{
           align: 'start',
@@ -341,12 +358,18 @@ const Barras = () => (
           to: 'violet',
         }}
         status='active'
-      />
+      /> */}
+
+<div class="flex w-56 h-4 overflow-hidden font-sans text-xs font-medium  flex-start bg-white">
+      <div class="flex items-center justify-center w-[80%] h-full overflow-hidden text-white break-all bg-pink-500 ">
+        80% Completo
+      </div>
+    </div> 
     </div>
 
-    <div className='flex items-center gap-4'>
+    <div className='flex items-center w-full gap-4'>
       <h5 className='xl:text-red-500'>TAILWINDCSS</h5>
-      <Progress
+      {/* <Progress
         percent={70}
         percentPosition={{
           align: 'start',
@@ -359,12 +382,24 @@ const Barras = () => (
           to: '#87d068',
         }}
         status='active'
-      />
+      /> */}
+
+<div class="flex xs-min:w-[9rem] xl:w-46 h-4 overflow-hidden font-sans text-xs font-medium  flex-start bg-white">
+      <div class="flex items-center justify-center w-[70%] h-full overflow-hidden text-white break-all bg-cyan-500 ">
+        70% Completo
+      </div>
+    </div> 
     </div>
 
     <div className='flex items-center gap-14'>
       <h5 className='xl:text-red-500'>GITHUB</h5>
-      <Progress
+
+      <div class="flex w-56 h-4 overflow-hidden font-sans text-xs font-medium  flex-start bg-white">
+      <div class="flex items-center justify-center w-[70%] h-full overflow-hidden text-white break-all bg-blue-500 ">
+        70% Completo
+      </div>
+    </div> 
+      {/* <Progress
         percent={70}
         percentPosition={{
           align: 'start',
@@ -377,12 +412,17 @@ const Barras = () => (
           to: '#87d068',
         }}
         status='active'
-      />
+      /> */}
     </div>
 
     <div className='flex items-center gap-7'>
       <h5 className='xl:text-red-500'>JAVASCRIPT</h5>
-      <Progress
+      <div class="flex w-56 h-4 overflow-hidden font-sans text-xs font-medium  flex-start bg-white">
+      <div class="flex items-center justify-center w-[40%] h-full overflow-hidden text-white break-all bg-yellow-500 ">
+        40% Completo
+      </div>
+    </div> 
+      {/* <Progress
         percent={40}
         percentPosition={{
           align: 'start',
@@ -395,7 +435,7 @@ const Barras = () => (
           to: '#87d068',
         }}
         status='active'
-      />
+      /> */}
     </div>
 
   </Flex>

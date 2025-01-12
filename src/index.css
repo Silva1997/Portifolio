@@ -4,16 +4,13 @@
 
 @layer{
   
-   @font-face {
+   /* @font-face  {
       font-family: 'jetbrains-mono';
-      src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
-   }
-   /* .jetbrains-mono-<uniquifier> {
-     font-family: "JetBrains Mono", serif;
-     font-optical-sizing: auto;
-     font-weight: <weight>;
-     font-style: normal;
+      font-style: normal;
+      font-optical-sizing: auto;
+      src: url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap') format('woff2');
    } */
+  
    body{
     color: '#ffd';
    }

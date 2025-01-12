@@ -15,38 +15,51 @@ const Menus = () => {
 
   return (
     <>
-      <button onClick={showDrawer} className="text-white">
-        <CiMenuBurger className="text-red font-bold lg:text-[3.5rem] xs-min:text-[1.8rem]    xl:text-[2.5rem]" />
+      <button onClick={showDrawer} className="text-red-500">
+        <CiMenuBurger className="text-red font-bold lg:text-[3.5rem] xs-min:text-[1.8rem]    xs-min:text-[2.5rem]" />
       </button>
 
       <Drawer title="Menu" onClose={onClose} open={open}>
+    
       <Anchor
-
-       targetOffset={'65'}
-        items={[
-          {
-            key: 'part-1',
-            href: '#home',
-            title: 'Home',
-          },
-          {
-            key: 'part-2',
-            href: '#sobre',
-            title: 'Sobre',
-          },
-          {
-            key: 'part-3',
-            href: '#servico',
-            title: 'Servicos',
-          },
-          {
-            key: 'part-4',
-            href: '#equipa',
-            title: 'Equipa',
-          },
-        ]}
-      />
-      
+            className='mt-1 text-black flex items-center  relative md:right-4  xs-min:right-[1rem] w-[31.9rem]'
+    
+            direction='vertical'
+            targetOffset={'65'}
+    
+            items={[
+              {
+                key: 'part-1',
+                href: '#sobre',
+                title: <h6 className=" xs-min:font-fontjetbrains xs-min:font-normal text-black text-base  font-semibold hover:text-red-500 cursor-pointer"> <span className="text-red-500 ">01.</span> Sobre</h6>
+    
+              },
+              {
+                key: 'part-2',
+                href: '#servico',
+                title: <h6 className=" xs-min:font-fontjetbrains xs-min:font-normal text-black text-base  font-semibold   hover:text-red-500  cursor-pointer">  <span className="text-red-500 ">02.</span> Serviço</h6>
+                ,
+              },
+              {
+                key: 'part-3',
+                href: '#habilidade',
+                title: <h6 className=" xs-min:font-fontjetbrains xs-min:font-normal text-black  text-base  font-semibold  hover:text-red-500  cursor-pointer">  <span className="text-red-500 ">03.</span> Habilidade</h6>
+    
+              },
+              {
+                key: 'part-4',
+                href: '#contacto',
+                title: <h6 className=" xs-min:font-fontjetbrains xs-min:font-normal text-black  text-base  font-semibold  hover:text-red-500  cursor-pointer">  <span className="text-red-500 ">04.</span> Contacto</h6>
+    
+              },
+              {
+                key: 'part-5',
+                href: '#',
+                title: <button className=" xs-min:font-fontjetbrains xs-min:font-normal  hover:bg-red-500/40  hover:text-black md:text-red-500 xs-min:text-red-500 border-[2px] h-10 border-red-600 rounded-sm md:w-24   xs-min:w-24 ">Curriculo</button>,
+    
+              },
+            ]}
+          />
       </Drawer>
     </>
   );
