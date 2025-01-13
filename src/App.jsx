@@ -2,7 +2,7 @@ import imagem from '../src/assets/image.png'
 import icon from '../src/assets/ANGOLA.jpeg'
 import { FiCodesandbox, FiFile, FiFigma, FiSend, FiGithub, FiLinkedin } from 'react-icons/fi'
 import React, { useState } from 'react';
-import { Flex, Progress, Anchor,ConfigProvider } from 'antd';
+import { Flex, Progress, Anchor, ConfigProvider } from 'antd';
 import Drawer from './componet/Drawer/Drawer';
 export default function App() {
 
@@ -29,15 +29,15 @@ export default function App() {
     handleReset();
 
   }
-  React.useEffect(() => {
-    // setName(getName)
-    console.log("Ola mundo");
-  }, [name])
+  // React.useEffect(() => {
+  //   // setName(getName)
+  //   console.log("Ola mundo");
+  // }, [name])
   return (
     <>
       <nav className="  shadow-sm shadow-red-500/50 overflow-hidden xl:text-white sticky top-0 z-[1000] items-center text-center h-16 pt-4 pb-4 bg-slate-950 flex flex-row justify-end xl:pl-14 xl:pr-16">
 
-        <div className=' xl:text-start xs-min:relative xl:relative xs-min:right-48 xl:right-[35rem]'>
+        <div className=' sm:relative sm:right-80  xl:text-start xs-min:relative xl:relative xs-min:right-48 xl:right-[35rem]'>
           <img width={40} src={icon} alt='Angola' />
         </div>
         <Navegador />
@@ -55,12 +55,12 @@ export default function App() {
         <h1 className="xl:text-[3rem] md:text-4xl  xl:leading-[3.3rem] xs-min:text-2xl w-full xs-min:mb-3  xl:mb-8 font-bold text-gray-400">     Desenvolvo soluções completas de<br className='xs-min:hidden'></br> software</h1>
 
 
-        <p className=" xs-min:text-wrap xs-min:text-base md:text-2xl xl:text-2xl  xs-min:text-justify tracking-normal xl:text-justify text-gray-400" >        Sou um engenheiro de informática de gestão especializado em criar (e ocasionalmente projetar) experiências digitais excepcionais. Tenho expertise em aplicações frontend and backend, web e Java, com ampla experiência profissional.
+        <p className=" xs-min:text-wrap sm:text-xl xs-min:text-base md:text-2xl xl:text-2xl  xs-min:text-justify tracking-normal xl:text-justify text-gray-400" >        Sou um engenheiro de informática de gestão especializado em criar (e ocasionalmente projetar) experiências digitais excepcionais. Tenho expertise em aplicações frontend and backend, web e Java, com ampla experiência profissional.
         </p>
 
-        <a className="   xs-min:text-white xl:text-white  xl:fixed xl:top-[24rem] xl:-right-8 hover:xl:text-red-500 active:scale-50 xl:text-sm  xl:rotate-90 cursor-pointer"><span className='flex items-center gap-2 text-sm'><FiSend />Lucaseugeniofernando@gmail.com</span></a>
+        <a className="   xs-min:text-white xl:text-white xs-min:mt-2  xl:fixed xl:top-[24rem] xl:-right-8 hover:xl:text-red-500 xl:active:scale-50 xl:text-sm  xl:rotate-90 cursor-pointer"><span className='flex items-center gap-2 text-sm'><FiSend />Lucaseugeniofernando@gmail.com</span></a>
         {/* <hr className=" xl:fixed xl:rotate-90 top-[28rem] -right-16 h-24 w-[1px] bg-white mt-12" /> */}
-        <a className=" xs-min:mb-20 xs-min:mt-20 xs-min:flex xs-min:items-center xs-min:justify-center xs-min:text-white xs-min:text-center xl:fixed xl:top-[20rem] xl:left-8 xl:text-sm  xl:rotate-90 cursor-pointer"><span className='flex items-center gap-2'><FiGithub className=' hover:scale-110 hover:xl:text-red-500' size={30} /> <FiLinkedin className=' hover:scale-110 hover:xl:text-red-500' size={30} /></span></a>
+        <a className=" xs-min:mb-20  xs-min:mt-20 xs-min:flex xs-min:items-center xs-min:justify-center xs-min:text-white xs-min:text-center xl:fixed xl:top-[20rem] xl:left-8 xl:text-sm  xl:rotate-90 cursor-pointer"><span className='flex items-center gap-2'><FiGithub className=' hover:scale-110 hover:text-red-500' size={30} /> <FiLinkedin className=' hover:scale-110 hover:text-red-500' size={30} /></span></a>
 
 
         <div className="flex  xs-min:mb-24 xl:mt-16 xl:mb-12 justify-center">
@@ -78,7 +78,7 @@ export default function App() {
             <h1 className=" font-fontjetbrains font-normal text-gray-300 xs-min:text-2xl xs-min:font-semibold xl:text-2xl  font-fira"><a className="xl:text-2xl xs-min:text-red-500  xl:text-red-500 font-jetbrains font-bold">01. </a>Sobre mim</h1> <hr className="xl:w-56 font-bold mt-3 ml-4" />
           </div>
 
-          <div className="grid xs-min:mt-4 xs-min:mb-8 xs-min:grid-cols-1 md:grid-cols-2 md:mt-4 xl:grid-cols-2">
+          <div className="grid xs-min:mt-4 xs-min:mb-8 xs-min:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 md:mt-4 xl:grid-cols-2">
 
 
             <div>
@@ -144,11 +144,11 @@ export default function App() {
               <div className="flex flex-1 justify-center mt-12 md:mt-0 ml-2 relative">
                 <div className="flex justify-center ">
 
-                  <img src={imagem} alt="Joabson de Souza" className=" bg-blue-50 rounded-md z-10 w-44 h-44 md:w-52 md:h-52 lg:xl:w-56 lg:h-56" />
+                  <img src={imagem} alt="Eugenio silva" className=" bg-blue-50 rounded-md z-10 w-44 h-44 md:w-52 md:h-52 lg:xl:w-56 lg:h-56" />
 
                 </div>
                 <div id="hover-div" className="rounded-md border border-red-500 absolute 
-                top-[10%] right-[20%] md:right-[1%] md:top-[12%] w-44 h-44 md:w-52 md:h-52 lg:xl:w-56 lg:h-56"></div>
+                top-[10%] xs-min:right-[30%] sm:right-[1%] right-[20%] md:right-[1%] md:top-[12%] w-44 h-44 md:w-52 md:h-52 lg:xl:w-56 lg:h-56"></div>
 
               </div>
             </div>
@@ -159,11 +159,11 @@ export default function App() {
         <div id='servico'>
 
           <div className="flex flex-row justify-start   items-center">
-            <h1 className=" font-fontjetbrains font-normal text-gray-300 xs-min:text-2xl xs-min:font-semibold xl:text-2xl  font-fira"><a className="xl:text-2xl  xl:text-red-500 font-jetbrains font-bold">02. </a>Serviços</h1> <hr className="xl:w-56 font-bold mt-3 ml-4" />
+            <h1 className=" font-fontjetbrains font-normal text-gray-300 xs-min:text-2xl xs-min:font-semibold xl:text-2xl  font-fira"><a className="xl:text-2xl xs-min:text-red-500  xl:text-red-500 font-jetbrains font-bold">02. </a>Serviços</h1> <hr className="xl:w-56 font-bold mt-3 ml-4" />
           </div>
 
 
-          <div className="grid xs-min:mt-8 text-white  xs-min:p-3 xs-min:mb-8 xs-min:grid-cols-1 md:grid-cols-2 xl:mt-8 xl:mb-8 xl:p-2 xl:grid-cols-3 place-items-center gap-4">
+          <div className="grid xs-min:mt-8 text-white  xs-min:p-3 xs-min:mb-8 xs-min:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:mt-8 xl:mb-8 xl:p-2 xl:grid-cols-3 place-items-center gap-4">
 
             <div className='hover:duration-75 xl:hover:scale-105 hover:border-[1px] hover:border-red-500 bg-[#1a1c29] flex flex-col items-center justify-center  w-full h-56 rounded-md'>
               {/* <img src='' alt='front-end' /> */}
@@ -199,7 +199,7 @@ export default function App() {
         <div id='habilidade'>
 
           <div className="flex flex-row justify-start  items-center">
-            <h1 className=" font-fontjetbrains font-normal text-gray-300 xs-min:text-2xl xs-min:font-semibold xl:text-2xl  font-fira"><a className="xl:text-2xl  xl:text-red-500 font-jetbrains font-bold">03. </a>Habilidades</h1> <hr className="xl:w-56 font-bold mt-3 ml-4" />
+            <h1 className=" font-fontjetbrains font-normal text-gray-300 xs-min:text-2xl xs-min:font-semibold xl:text-2xl  font-fira"><a className="xl:text-2xl  xs-min:text-red-500 xl:text-red-500 font-jetbrains font-bold">03. </a>Habilidades</h1> <hr className="xl:w-56 font-bold mt-3 ml-4" />
           </div>
 
           <Barras />
@@ -210,7 +210,7 @@ export default function App() {
         <div id='contacto'>
           <div className="flex flex-row justify-start  items-center">
             <h1 className=" font-fontjetbrains font-normal text-gray-300 xs-min:text-2xl xs-min:font-semibold xl:text-2xl  font-fira">
-              <a className=" xl:text-2xl  xl:text-red-500 font-jetbrains font-bold">
+              <a className=" xl:text-2xl xs-min:text-red-500 xl:text-red-500 font-jetbrains font-bold">
                 04. </a>Contacto</h1> <hr className="xl:w-56 font-bold mt-3 ml-4" />
           </div>
           <p className='text-base mt-3 mb-3 text-white text-start'>Novas oportunidades são sempre bem-vindas!
@@ -229,7 +229,7 @@ export default function App() {
 
 
         <footer className='text-center text-white'>
-          © Todos os Diretos Reservados - Eugenio Silva.
+          © Todos os Diretos Reservados - Eugénio Silva.
         </footer>
       </main>
 
@@ -247,56 +247,56 @@ function Navegador() {
   return (
 
     <div className='   md:flex md:flex-row md:items-center md:gap-3 xs-min:hidden xl:flex xl:flex-row xl:items-center xl:gap-3'>
-     
-     
-     <ConfigProvider
-  theme={{
-    token: {
-      colorPrimary:'#fff'
-    },
-  }}
->
-<Anchor
-        className='mt-1 text-white flex items-center  relative md:right-4  xl:right-[1rem] w-[40.9rem]'
-        showInkInFixed={false}
-        direction='horizontal'
-        targetOffset={'65'}
 
-        items={[
-          {
-            key: 'part-1',
-            href: '#sobre',
-            title: <h6 className=" xl:font-fontjetbrains xl:font-normal text-white text-base  font-semibold hover:text-red-500 cursor-pointer"> <span className="text-red-500 ">01.</span> Sobre</h6>
 
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: '#fff'
           },
-          {
-            key: 'part-2',
-            href: '#servico',
-            title: <h6 className=" xl:font-fontjetbrains xl:font-normal text-white text-base  font-semibold   hover:text-red-500  cursor-pointer">  <span className="text-red-500 ">02.</span> Serviço</h6>
-            ,
-          },
-          {
-            key: 'part-3',
-            href: '#habilidade',
-            title: <h6 className=" xl:font-fontjetbrains xl:font-normal text-white  text-base  font-semibold  hover:text-red-500  cursor-pointer">  <span className="text-red-500 ">03.</span> Habilidade</h6>
+        }}
+      >
+        <Anchor
+          className='mt-1 text-white flex items-center  relative md:right-4  xl:right-[1rem] w-[40.9rem]'
+          showInkInFixed={false}
+          direction='horizontal'
+          targetOffset={'65'}
 
-          },
-          {
-            key: 'part-4',
-            href: '#contacto',
-            title: <h6 className=" xl:font-fontjetbrains xl:font-normal text-white  text-base  font-semibold  hover:text-red-500  cursor-pointer">  <span className="text-red-500 ">04.</span> Contacto</h6>
+          items={[
+            {
+              key: 'part-1',
+              href: '#sobre',
+              title: <h6 className=" xl:font-fontjetbrains xl:font-normal text-white text-base  font-semibold hover:text-red-500 cursor-pointer"> <span className="text-red-500 ">01.</span> Sobre</h6>
 
-          },
-          {
-            key: 'part-5',
-            href: '#',
-            title: <button className=" xl:font-fontjetbrains xl:font-normal  hover:bg-red-500/40  hover:text-white md:text-red-500 xl:text-red-500 border-[2px] h-10 border-red-600 rounded-sm md:w-24   xl:w-24 ">Curriculo</button>,
+            },
+            {
+              key: 'part-2',
+              href: '#servico',
+              title: <h6 className=" xl:font-fontjetbrains xl:font-normal text-white text-base  font-semibold   hover:text-red-500  cursor-pointer">  <span className="text-red-500 ">02.</span> Serviço</h6>
+              ,
+            },
+            {
+              key: 'part-3',
+              href: '#habilidade',
+              title: <h6 className=" xl:font-fontjetbrains xl:font-normal text-white  text-base  font-semibold  hover:text-red-500  cursor-pointer">  <span className="text-red-500 ">03.</span> Habilidade</h6>
 
-          },
-        ]}
-      />
-</ConfigProvider>
-     
+            },
+            {
+              key: 'part-4',
+              href: '#contacto',
+              title: <h6 className=" xl:font-fontjetbrains xl:font-normal text-white  text-base  font-semibold  hover:text-red-500  cursor-pointer">  <span className="text-red-500 ">04.</span> Contacto</h6>
+
+            },
+            {
+              key: 'part-5',
+              href: '#',
+              title: <button className=" xl:font-fontjetbrains xl:font-normal  hover:bg-red-500/40  hover:text-white md:text-red-500 xl:text-red-500 border-[2px] h-10 border-red-600 rounded-sm md:w-24   xl:w-24 ">Curriculo</button>,
+
+            },
+          ]}
+        />
+      </ConfigProvider>
+
       {/*
      <h6 className="  hover:xl:text-red-500 cursor-pointer"> <span className="xl:text-red-500 ">01.</span> Sobre</h6>
       <h6 className="  hover:xl:text-red-500  cursor-pointer">  <span className="xl:text-red-500 ">02.</span> Experiência</h6>
@@ -314,7 +314,7 @@ const Barras = () => (
   <Flex gap="small" vertical
 
 
-    className='mt-4 xs-min:text-white xs-min:text-sm mb-4 xs-min:w-44 xl:w-full'>
+    className='mt-4 xs-min:text-white xs-min:text-sm mb-4 xs-min:w-full xl:w-full'>
 
 
     <div className='flex items-center gap-6'>
@@ -335,11 +335,11 @@ const Barras = () => (
         status='active'
       /> */}
 
-<div class="flex w-56 h-4 overflow-hidden font-sans text-xs font-medium  flex-start bg-white">
-      <div class="flex items-center justify-center w-[80%] h-full overflow-hidden text-white break-all bg-gray-900 ">
-        80% Completo
+      <div class="flex w-56 h-4 overflow-hidden font-sans text-xs font-medium  flex-start bg-white">
+        <div class="flex items-center justify-center w-[80%] h-full overflow-hidden text-white break-all bg-gray-900 ">
+          80% Completo
+        </div>
       </div>
-    </div>  
     </div>
 
 
@@ -360,11 +360,11 @@ const Barras = () => (
         status='active'
       /> */}
 
-<div class="flex w-56 h-4 overflow-hidden font-sans text-xs font-medium  flex-start bg-white">
-      <div class="flex items-center justify-center w-[80%] h-full overflow-hidden text-white break-all bg-pink-500 ">
-        80% Completo
+      <div class="flex w-56 h-4 overflow-hidden font-sans text-xs font-medium  flex-start bg-white">
+        <div class="flex items-center justify-center w-[84%] h-full overflow-hidden text-white break-all bg-pink-500 ">
+          85% Completo
+        </div>
       </div>
-    </div> 
     </div>
 
     <div className='flex items-center w-full gap-4'>
@@ -384,21 +384,27 @@ const Barras = () => (
         status='active'
       /> */}
 
-<div class="flex xs-min:w-[9rem] xl:w-46 h-4 overflow-hidden font-sans text-xs font-medium  flex-start bg-white">
-      <div class="flex items-center justify-center w-[70%] h-full overflow-hidden text-white break-all bg-cyan-500 ">
-        70% Completo
+      <div class="flex xs-min:w-48
+xl:w-46 h-4 overflow-hidden 
+font-sans 
+text-xs font-medium  
+flex-start bg-white">
+        <div class="flex items-center 
+        justify-center w-[70%] h-full 
+        overflow-hidden text-white break-all bg-cyan-500 ">
+          70% Completo
+        </div>
       </div>
-    </div> 
     </div>
 
-    <div className='flex items-center gap-14'>
+    <div className='flex items-center gap-[3.33rem]'>
       <h5 className='xl:text-red-500'>GITHUB</h5>
 
-      <div class="flex w-56 h-4 overflow-hidden font-sans text-xs font-medium  flex-start bg-white">
-      <div class="flex items-center justify-center w-[70%] h-full overflow-hidden text-white break-all bg-blue-500 ">
-        70% Completo
+      <div class="flex xl:w-56 xs-min:w-48 h-4 overflow-hidden font-sans text-xs font-medium  flex-start bg-white">
+        <div class="flex items-center justify-center w-[70%] h-full overflow-hidden text-white break-all bg-blue-500 ">
+          70% Completo
+        </div>
       </div>
-    </div> 
       {/* <Progress
         percent={70}
         percentPosition={{
@@ -417,11 +423,11 @@ const Barras = () => (
 
     <div className='flex items-center gap-7'>
       <h5 className='xl:text-red-500'>JAVASCRIPT</h5>
-      <div class="flex w-56 h-4 overflow-hidden font-sans text-xs font-medium  flex-start bg-white">
-      <div class="flex items-center justify-center w-[40%] h-full overflow-hidden text-white break-all bg-yellow-500 ">
-        40% Completo
+      <div class="flex  xs-min:w-[10rem] xl:w-56 h-4 overflow-hidden font-sans text-xs font-medium  flex-start bg-white">
+      <div class="flex items-center justify-center w-[70%] h-full overflow-hidden text-white break-all bg-blue-500 ">
+          40% Completo
+        </div>
       </div>
-    </div> 
       {/* <Progress
         percent={40}
         percentPosition={{

@@ -23,7 +23,9 @@ export default {
     screens: {
       // Definindo um intervalo customizado para 360px a 414px
       'xs-min': '360px', // A partir de 360px
-      'sm': '648px',
+      'sm':{min:'500px', max:'648px'} ,// A partir de 500px a 648px
+      'portrait':{raw:'( orientation:portrait)'},
+      'lanscape':{raw:'( orientation:lanscape)'},
       'md': '768px',  // A partir de 768px
       'lg': '1024px',
       'xl': '1280px',
@@ -36,30 +38,7 @@ export default {
 
 
   plugins: [
-    // function ({ addComponents, theme }) {
-    //   addComponents({
-    //     '@media (orientation: landscape)': {
-    //       '.landscape\\:bg-cover': {
-    //         backgroundSize: 'cover',
-    //         backgroundImage: 'url("./src/assets/figma.png")',
-    //         backgroundRepeat: 'no-repeat',
-    //       },
-    //       '.landscape\\:h-custom': {
-    //         height: '60vh',
-    //       },
-    //     },
-    //     '@media (orientation: portrait)': {
-    //       '.portrait\\:bg-cover': {
-    //         backgroundSize: 'cover',
-    //         backgroundImage: 'url("./src/assets/fundo.png")',
-    //         backgroundRepeat: 'no-repeat',
-    //       },
-    //       '.portrait\\:h-custom': {
-    //         height: '40vh',
-    //       },
-    //     },
-    //   });
-    // },
+
   ],
 
 }

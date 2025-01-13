@@ -15,7 +15,10 @@ const Menus = () => {
 
   return (
     <>
+
+ 
       <button onClick={showDrawer} className="text-red-500">
+      
         <CiMenuBurger className="text-red font-bold lg:text-[3.5rem] xs-min:text-[1.8rem]    xs-min:text-[2.5rem]" />
       </button>
 
