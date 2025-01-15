@@ -19,7 +19,7 @@ const Menus = () => {
  
       <button onClick={showDrawer} className="text-red-500">
       
-        <CiMenuBurger className="text-red font-bold lg:text-[3.5rem] xs-min:text-[1.8rem]    xs-min:text-[2.5rem]" />
+        <CiMenuBurger className="text-red font-bold lg:text-[3.5rem] xs-min:text-[1.8rem]" />
       </button>
 
       <Drawer title="Menu" onClose={onClose} open={open}>
@@ -58,7 +58,8 @@ const Menus = () => {
               {
                 key: 'part-5',
                 href: '#',
-                title: <button className=" xs-min:font-fontjetbrains xs-min:font-normal  hover:bg-red-500/40  hover:text-black md:text-red-500 xs-min:text-red-500 border-[2px] h-10 border-red-600 rounded-sm md:w-24   xs-min:w-24 ">Curriculo</button>,
+                title: <button className=" xs-min:font-fontjetbrains xs-min:font-normal  hover:bg-red-500/40  hover:text-black md:text-red-500 xs-min:text-red-500 border-[2px] h-10 border-red-600 rounded-sm md:w-24   xs-min:w-24 ">
+                  <a className="list-none " href='https://drive.google.com/file/d/12eLKbV0dz-isS5PrtRYgnqwEYZVNOB5f/view?usp=drive_link' target="_blank">Curriculo</a></button>,
     
               },
             ]}
