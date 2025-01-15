@@ -5,11 +5,31 @@ import { FiCodesandbox, FiFile, FiFigma, FiSend, FiGithub, FiLinkedin } from 're
 import React, { useState, useRef } from 'react';
 import { Flex, Progress, Anchor, ConfigProvider } from 'antd';
 import Drawer from './componet/Drawer/Drawer';
-import { motion, useInView } from "motion/react"
+import { motion } from "motion/react"
+import { useInView } from 'react-intersection-observer';
 
 export default function App() {
 
   const [valores, setValores] = useState('');  //Pegar os valores do estado pelo formulario
+
+  const servicos = [{
+    icon: <FiCodesandbox size={80} />,
+    title: 'Front-end',
+    description: 'Criação de interfaces interativas e responsivas com Html, Css, Tailwind Css, React Js, JavaScript e Ant design.',
+    delay: 0.3,
+  },
+  {
+    icon: <FiFile size={80} />,
+    title: 'Aplicação Web',
+    description: 'Criação de Aplicativos web e móveis para todo tipo de serviços.',
+    delay: 0.05,
+  },
+  {
+    icon: <FiFigma size={80} />,
+    title: 'Landing Pages',
+    description: 'Landing Pages otimizadas com design responsivos, voltadas para empresas, vendas...',
+    delay: 0.08,
+  },];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,11 +52,19 @@ export default function App() {
 
   }
 
-  const ref = useRef(null);
+  // const ref = useRef(null);
 
   // Detecta quando o elemento está no viewport
-  const isInView = useInView(ref, { triggerOnce: false, threshold: 0.2 });
-  const activo = useInView(ref, { triggerOnce: false, threshold: 0.2 });
+  // const isInView = useInView(ref,  {triggerOnce: false, threshold: 0.2 });
+  const { ref: servicoRef } = useInView({
+    triggerOnce: false, // Animação será executada apenas uma vez
+    threshold: 0.2, // Percentual de visibilidade necessário para acionar a animação
+  });
+
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.2,
+  });
 
   return (
     <>
@@ -180,8 +208,7 @@ export default function App() {
         </div>
 
         {/* Servicos */}
-        <div id='servico'>
-
+        <div id='servico' >
           <motion.h1
             className="flex flex-row justify-start   items-center"
             initial={{ opacity: 0, x: -100 }} // Inicializa o elemento fora da tela à esquerda
@@ -191,76 +218,29 @@ export default function App() {
             <h1 className=" font-fontjetbrains font-normal xs-min:mt-6 text-gray-300 xs-min:text-xl xs-min:font-semibold xl:text-2xl  font-fira">
               <span className="xl:text-2xl xs-min:text-red-500  xl:text-red-500 font-jetbrains font-bold">02. </span>
               Serviços</h1> <hr className=" xs-min:w-36 xl:w-56 xs-min:mt-7 font-bold xl:mt-3 ml-4" />
-
-
           </motion.h1>
-          {/* <div className="flex flex-row justify-start   items-center">
-            <h1 className=" font-fontjetbrains font-normal text-gray-300 xs-min:text-2xl xs-min:font-semibold xl:text-2xl  font-fira"><a className="xl:text-2xl xs-min:text-red-500  xl:text-red-500 font-jetbrains font-bold">02. </a>Serviços</h1> <hr className="xl:w-56 font-bold mt-3 ml-4" />
-          </div> */}
-
-
-          <div className="grid xs-min:mt-2 text-white  xs-min:p-3 xs-min:mb-8 xs-min:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:mt-8 xl:mb-8 xl:p-2 xl:grid-cols-3 place-items-center gap-4">
-
-            <motion.div
-              className='hover:duration-75 xl:hover:scale-105 
-              hover:border-[1px] hover:border-red-500 bg-[#1a1c29]
-              flex flex-col items-center justify-center  w-full xs-min:h-72 xl:h-56 rounded-md'
-              ref={ref}
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={isInView ? { scale: 1, opacity: 1 } : {}}
-              transition={{ duration: 0.2, ease: "easeInOut" }}
-            >
-              {/* <div
-               className='hover:duration-75 xl:hover:scale-105 hover:border-[1px] hover:border-red-500 bg-[#1a1c29] flex flex-col items-center justify-center  w-full h-56 rounded-md'>
-             */}
-              <span><FiCodesandbox size={80} />      </span>
-              <h5 className='font-bold'>Front-end</h5>
-              <p className='text-center text-base'>Criação de interfaces interativas e
-                responsivas com Html,Css,Tailwind Css,React Js,JavaScript e Ant design.
-              </p>
-              {/* </div> */}
-            </motion.div>
-
-            <motion.div
-              className='hover:duration-75 xl:hover:scale-105 
-              hover:border-[1px] hover:border-red-500 bg-[#1a1c29]
-              flex flex-col items-center justify-center  w-full xs-min:h-72 xl:h-56 rounded-md'
-              ref={ref}
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={activo ? { scale: 1, opacity: 1 } : {}}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-            >
-              {/* <div className=' hover:duration-75 xl:hover:scale-105 hover:border-[1px] hover:border-red-500 bg-[#1a1c29] flex flex-col items-center justify-center  w-full h-56 rounded-md'>
-              */}
-              <span><FiFile size={80} />      </span>
-              <h5 className='font-bold'>Aplicação Web</h5>
-              <p className='text-center text-base'>
-                Criação de Aplicativos web e moveis para todo tipo de serviços.
-              </p>
-              {/* </div> */}
-            </motion.div>
-
-            {/* <div className='hover:duration-75 xl:hover:scale-105 hover:border-[1px] hover:border-red-500 bg-[#1a1c29] flex flex-col items-center justify-center  w-full h-56 rounded-md'>
-             */}
-
-
-            <motion.div
-              className='hover:duration-75 xl:hover:scale-105 
-              hover:border-[1px] hover:border-red-500 bg-[#1a1c29]
-              flex flex-col items-center justify-center  w-full xs-min:h-72 xl:h-56rounded-md'
-              ref={ref}
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={isInView ? { scale: 1, opacity: 1 } : {}}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
-            >
-              <span><FiFigma size={80} />      </span>
-              <h5 className='font-bold'>Landing Pages</h5>
-              <p className='text-center text-base'>
-                Landing Pages otimizadas com design responsivos,voltadas para empresas,vendas...
-              </p>
-              {/* </div> */}
-            </motion.div>
+          <div className="grid xs-min:mt-2 text-white xs-min:p-3
+           xs-min:mb-8 xs-min:grid-cols-1 sm:grid-cols-2 md:grid-cols-2
+           xl:mt-8 xl:mb-8 xl:p-2 xl:grid-cols-3 place-items-center gap-4">
+            {servicos.map((servico, index) => {
+            const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.2, });
+            return (
+           <motion.div key={index} className="hover:duration-75 xl:hover:scale-105 
+           hover:border-[1px] hover:border-red-500 bg-[#1a1c29] flex 
+           flex-col items-center justify-center w-full xs-min:h-96 
+           xl:h-72 rounded-md"
+                  ref={ref}
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 1, delay: servico.delay }} >
+                  <span>{servico.icon}</span>
+                  <h5 className="font-bold">{servico.title}</h5>
+                  <p className="text-center text-base">{servico.description}</p>
+                </motion.div>);
+            })}
           </div>
+
+
         </div>
 
         {/* Habilidades */}
@@ -273,8 +253,8 @@ export default function App() {
             transition={{ duration: 1 }} // Define o tempo da animação
           >
             <h1 className=" font-fontjetbrains font-normal text-gray-300 xs-min:text-[1.2rem] xs-min:font-semibold xl:text-2xl  font-fira">
-              <span className="xl:text-2xl  xs-min:text-red-500 xl:text-red-500 font-jetbrains font-bold">03. </span>Habilidades</h1> 
-              <hr className=" xs-min:w-28 xl:w-56 font-bold xl:mt-3 ml-4" />
+              <span className="xl:text-2xl  xs-min:text-red-500 xl:text-red-500 font-jetbrains font-bold">03. </span>Habilidades</h1>
+            <hr className=" xs-min:w-28 xl:w-56 font-bold xl:mt-3 ml-4" />
 
           </motion.h1>
           {/* <div className="flex flex-row justify-start  items-center">
@@ -333,6 +313,74 @@ export default function App() {
   )
 }
 
+
+function meu() {
+
+  return (<>
+
+    <div ref={servicoRef} className="grid xs-min:mt-2 text-white  xs-min:p-3 xs-min:mb-8 xs-min:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:mt-8 xl:mb-8 xl:p-2 xl:grid-cols-3 place-items-center gap-4">
+      <motion.div
+        className='hover:duration-75 xl:hover:scale-105 
+              hover:border-[1px] hover:border-red-500 bg-[#1a1c29]
+              flex flex-col items-center justify-center  w-full xs-min:h-96 xl:h-72 rounded-md'
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 1, delay: 0.3 }}
+      >
+        {/* <div
+               className='hover:duration-75 xl:hover:scale-105 hover:border-[1px] hover:border-red-500 bg-[#1a1c29] flex flex-col items-center justify-center  w-full h-56 rounded-md'>
+             */}
+        <span><FiCodesandbox size={80} />      </span>
+        <h5 className='font-bold'>Front-end</h5>
+        <p className='text-center text-base'>Criação de interfaces interativas e
+          responsivas com Html,Css,Tailwind Css,React Js,JavaScript e Ant design.
+        </p>
+        {/* </div> */}
+      </motion.div>
+
+      <motion.div
+        className='hover:duration-75 xl:hover:scale-105 
+              hover:border-[1px] hover:border-red-500 bg-[#1a1c29]
+              flex flex-col items-center justify-center  w-full xs-min:h-96 xl:h-72 rounded-md'
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 1, delay: 0.05 }}
+      >
+        {/* <div className=' hover:duration-75 xl:hover:scale-105 hover:border-[1px] hover:border-red-500 bg-[#1a1c29] flex flex-col items-center justify-center  w-full h-56 rounded-md'>
+              */}
+        <span><FiFile size={80} />      </span>
+        <h5 className='font-bold'>Aplicação Web</h5>
+        <p className='text-center text-base'>
+          Criação de Aplicativos web e moveis para todo tipo de serviços.
+        </p>
+        {/* </div> */}
+      </motion.div>
+
+      {/* <div className='hover:duration-75 xl:hover:scale-105 hover:border-[1px] hover:border-red-500 bg-[#1a1c29] flex flex-col items-center justify-center  w-full h-56 rounded-md'>
+             */}
+
+
+      <motion.div
+        className='hover:duration-75 xl:hover:scale-105 
+              hover:border-[1px] hover:border-red-500 bg-[#1a1c29]
+              flex flex-col items-center justify-center  w-full xs-min:h-96 xl:h-72 rounded-md'
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 1, delay: 0.08 }}
+      >
+        <span><FiFigma size={80} />      </span>
+        <h5 className='font-bold'>Landing Pages</h5>
+        <p className='text-center text-base'>
+          Landing Pages otimizadas com design responsivos,voltadas para empresas,vendas...
+        </p>
+        {/* </div> */}
+      </motion.div>
+    </div>
+  </>)
+}
 
 
 function Navegador() {
@@ -411,7 +459,7 @@ const Barras = () => (
     className='mt-4 xs-min:text-white xs-min:text-sm mb-4 xs-min:w-full xl:w-full'>
 
 
-    <div className='flex items-center gap-6'>
+    <div className='flex xs-min:justify-center xs-min:flex-col xs-min:items-start xs-min:gap-2 xl:gap-6 xl:justify-start xl:items-center xl:flex-row'>
       <h5 className='xl:text-white'>REACT.JS</h5>
       {/* <Progress
         percent={100}
@@ -437,7 +485,7 @@ const Barras = () => (
     </div>
 
 
-    <div className='flex items-center gap-4'>
+    <div className='flex xs-min:justify-center xs-min:flex-col xs-min:items-start xs-min:gap-2 xl:gap-6 xl:justify-start xl:items-center xl:flex-row'>
       <h5 className='xl:text-white'>HTML/CSS</h5>
       {/* <Progress
         percent={80}
@@ -461,7 +509,7 @@ const Barras = () => (
       </div>
     </div>
 
-    <div className='flex items-center w-full gap-4'>
+    <div className='flex xs-min:justify-center xs-min:flex-col xs-min:items-start xs-min:gap-2 xl:gap-6 xl:justify-start xl:items-center xl:flex-row'>
       <h5 className='xl:text-white'>TAILWINDCSS</h5>
       {/* <Progress
         percent={70}
@@ -491,7 +539,9 @@ const Barras = () => (
       </div>
     </div>
 
-    <div className='flex items-center gap-[3.33rem]'>
+    {/* <div className='flex items-center gap-[3.33rem]'> */}
+    <div className='flex xs-min:justify-center xs-min:flex-col xs-min:items-start xs-min:gap-2 xl:gap-6 xl:justify-start xl:items-center xl:flex-row'>
+
       <h5 className='xl:text-white'>GITHUB</h5>
 
       <div class="flex xl:w-80 border-none xs-min:w-48 h-4 overflow-hidden font-sans text-xs font-medium  flex-start bg-white">
@@ -515,7 +565,8 @@ const Barras = () => (
       /> */}
     </div>
 
-    <div className='flex items-center gap-7'>
+    <div className='flex xs-min:justify-center xs-min:flex-col xs-min:items-start xs-min:gap-2 xl:gap-7 xl:justify-start xl:items-center xl:flex-row'>
+
       <h5 className='xl:text-white'>JAVASCRIPT</h5>
       <div class="flex  xs-min:w-[10rem] xl:w-80  border-none h-4 overflow-hidden font-sans text-xs font-medium  flex-start bg-white">
         <div class="flex items-center justify-center border-2 border-blue-500 w-[70%] h-full overflow-hidden text-white break-all bg-blue-500 ">
